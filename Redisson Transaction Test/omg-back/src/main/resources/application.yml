@@ -1,0 +1,40 @@
+spring:
+  application:
+    name: omg-back
+
+  datasource:
+    url: ${DB_URL_LOCAL}
+    username: ${DB_USERNAME_LOCAL}
+    password: ${DB_PASSWORD_LOCAL}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  #        default_batch_fetch_size: 100
+
+  # Redis
+  data:
+    redis:
+      host: localhost
+      port: 6379
+logging.level:
+  org.hibernate.SQL: debug
+  com.ssafy.omg: debug
+
+cors:
+  allowed:
+    origins: http://localhost:5173
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

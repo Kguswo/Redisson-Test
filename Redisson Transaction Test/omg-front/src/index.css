@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after,
+html,
+body,
+div,
+button,
+a,
+input,
+svg .clickable {
+  cursor: url('/system/cursor.cur'), auto;
+}
+
+html {
+  @apply h-screen w-full text-gray-800 break-words m-auto select-none;
+  font-size: 14px; /* 1rem을 14px로 설정 */
+}
+
+input {
+  @apply focus:outline-none;
+}
+
+button:disabled {
+  cursor: url('/system/cursor.cur'), auto;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'OKDDUNG';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/OKDDUNG.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Katuri';
+  src: url('https://gcore.jsdelivr.net/gh/projectnoonnu/noonfonts_13@1.0/Katuri.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer utilities {
+  /* 'b'가 붙은 텍스트 크기에는 'OKDDUNG' 폰트 적용 */
+  .text-omg-24b,
+  .text-omg-28b,
+  .text-omg-30b,
+  .text-omg-40b,
+  .text-omg-50b,
+  .text-omg-100b {
+    @apply font-omg-title;
+  }
+
+  /* 'b'가 붙지 않은 텍스트 크기에는 'Katuri' 폰트 적용 */
+  .text-omg-14,
+  .text-omg-18,
+  .text-omg-20,
+  .text-omg-24,
+  .text-omg-28,
+  .text-omg-30 {
+    @apply font-omg-body;
+  }
+}
